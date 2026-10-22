@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main # atau master
+
+media_folder: "images/uploads" # Folder tempat menyimpan foto dari HP
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Artikel / Event"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Judul", name: "title", widget: "string" }
+      - { label: "Tanggal", name: "date", widget: "datetime" }
+      - { label: "Gambar Banner", name: "image", widget: "image" }
+      - { label: "Isi Konten", name: "body", widget: "markdown" }
